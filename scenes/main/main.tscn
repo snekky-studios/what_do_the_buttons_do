@@ -1,0 +1,585 @@
+[gd_scene load_steps=28 format=3 uid="uid://v8yeymtkyifq"]
+
+[ext_resource type="Script" uid="uid://dpvokmmnaljay" path="res://scenes/main/main.gd" id="1_hyk8p"]
+[ext_resource type="Shader" uid="uid://cdlqk7w6igjhc" path="res://scenes/main/button.gdshader" id="2_7smn1"]
+[ext_resource type="Texture2D" uid="uid://dan2vb0p20ct8" path="res://assets/sprites/buttons/button_blank.png" id="3_raeie"]
+[ext_resource type="Texture2D" uid="uid://cdgy4hy708bjt" path="res://assets/sprites/buttons/symbol_beta.png" id="4_hxu8e"]
+[ext_resource type="Texture2D" uid="uid://cfhntboy7g6vo" path="res://assets/sprites/buttons/halo.png" id="5_nvumn"]
+[ext_resource type="Texture2D" uid="uid://hjo8ce4iln8h" path="res://assets/sprites/buttons/symbol_gamma.png" id="6_ou6is"]
+[ext_resource type="Texture2D" uid="uid://c7pyhrtrgtayy" path="res://assets/sprites/buttons/symbol_omega.png" id="7_necax"]
+[ext_resource type="Texture2D" uid="uid://daav2m047gue" path="res://assets/sprites/buttons/symbol_theta.png" id="8_r4lks"]
+[ext_resource type="Texture2D" uid="uid://coeh53517e5qc" path="res://assets/sprites/progress_bar/progress_bar_arc_under.png" id="9_pg34l"]
+[ext_resource type="Texture2D" uid="uid://dxhsxa1vpv38c" path="res://assets/sprites/progress_bar/progress_bar_arc_progress.png" id="10_m4h2d"]
+[ext_resource type="Texture2D" uid="uid://cp8saky264wau" path="res://assets/sprites/progress_bar/progress_bar_rect_horizontal_under.png" id="11_p8abn"]
+[ext_resource type="Texture2D" uid="uid://bjq7ms5d5y5e8" path="res://assets/sprites/progress_bar/progress_bar_rect_horizontal_progress.png" id="12_s17dp"]
+[ext_resource type="Texture2D" uid="uid://i4tnjo2kagf3" path="res://assets/sprites/progress_bar/progress_bar_rect_vertical_under.png" id="13_37hlw"]
+[ext_resource type="Texture2D" uid="uid://bx8iekydi0ofq" path="res://assets/sprites/progress_bar/progress_bar_rect_vertical_progress.png" id="14_6llfj"]
+[ext_resource type="Texture2D" uid="uid://dwafxd2gqqxtm" path="res://assets/sprites/menu/easy.png" id="15_hxu8e"]
+[ext_resource type="Texture2D" uid="uid://cwybxcgtw8k3f" path="res://assets/sprites/menu/hard.png" id="16_nvumn"]
+[ext_resource type="FontFile" uid="uid://hk6041hnpqo5" path="res://assets/fonts/m5x7.ttf" id="17_nvumn"]
+[ext_resource type="Texture2D" uid="uid://wu8gi4xg5sk1" path="res://assets/sprites/menu/game_over.png" id="18_ou6is"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ou6is"]
+font = ExtResource("17_nvumn")
+font_size = 32
+font_color = Color(1, 0.968627, 0.972549, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swkix"]
+resource_local_to_scene = true
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(1, 0.309804, 0.411765, 1)
+shader_parameter/shape = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n3vwu"]
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(1, 0.505882, 0.258824, 1)
+shader_parameter/shape = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hc5d0"]
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(1, 0.854902, 0.270588, 1)
+shader_parameter/shape = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0i47d"]
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(0.286275, 0.905882, 0.92549, 1)
+shader_parameter/shape = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgwkc"]
+resource_local_to_scene = true
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(1, 0.309804, 0.411765, 1)
+shader_parameter/shape = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4w2x3"]
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(1, 0.505882, 0.258824, 1)
+shader_parameter/shape = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svq4k"]
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(1, 0.854902, 0.270588, 1)
+shader_parameter/shape = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ygedu"]
+shader = ExtResource("2_7smn1")
+shader_parameter/color = Color(0.286275, 0.905882, 0.92549, 1)
+shader_parameter/shape = 3
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hyk8p")
+
+[node name="VBoxContainerMenu" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 120.0
+offset_top = 75.0
+offset_right = 320.0
+offset_bottom = 279.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureButtonEasy" type="TextureButton" parent="VBoxContainerMenu"]
+layout_mode = 2
+texture_normal = ExtResource("15_hxu8e")
+
+[node name="TextureButtonHard" type="TextureButton" parent="VBoxContainerMenu"]
+layout_mode = 2
+texture_normal = ExtResource("16_nvumn")
+
+[node name="TextureRectGameOver" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 120.0
+offset_top = 75.0
+offset_right = 320.0
+offset_bottom = 275.0
+texture = ExtResource("18_ou6is")
+metadata/_edit_lock_ = true
+
+[node name="TimerGame" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 60.0
+
+[node name="TimerUpdate" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="HBoxContainerDifficulty" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+offset_left = 400.0
+offset_top = 20.0
+offset_right = 600.0
+offset_bottom = 60.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LabelDifficulty" type="Label" parent="HBoxContainerDifficulty"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ou6is")
+
+[node name="HBoxContainerScore" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 50.0
+offset_right = 600.0
+offset_bottom = 90.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LabelScoreText" type="Label" parent="HBoxContainerScore"]
+layout_mode = 2
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_ou6is")
+
+[node name="LabelScore" type="Label" parent="HBoxContainerScore"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_ou6is")
+
+[node name="HBoxContainerTime" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 80.0
+offset_right = 600.0
+offset_bottom = 120.0
+mouse_filter = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LabelTimeText" type="Label" parent="HBoxContainerTime"]
+layout_mode = 2
+text = "TIME LEFT:"
+label_settings = SubResource("LabelSettings_ou6is")
+
+[node name="LabelTime" type="Label" parent="HBoxContainerTime"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_ou6is")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(380, 300)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 340.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainerColorRects" type="VBoxContainer" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="VBoxContainerButtonsOperator" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 212)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 120.0
+offset_right = 500.0
+offset_bottom = 332.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureButtonOperator0" type="TextureButton" parent="VBoxContainerButtonsOperator"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_swkix")
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperator/TextureButtonOperator0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+
+[node name="ButtonSymbolOperator0" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator0/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("4_hxu8e")
+
+[node name="ButtonHaloOperator0" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator0/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="TextureButtonOperator1" type="TextureButton" parent="VBoxContainerButtonsOperator"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_n3vwu")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperator/TextureButtonOperator1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonSymbolOperator1" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator1/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("6_ou6is")
+
+[node name="ButtonHaloOperator1" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator1/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="TextureButtonOperator2" type="TextureButton" parent="VBoxContainerButtonsOperator"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_hc5d0")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperator/TextureButtonOperator2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonSymbolOperator2" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator2/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("7_necax")
+
+[node name="ButtonHaloOperator2" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator2/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="TextureButtonOperator3" type="TextureButton" parent="VBoxContainerButtonsOperator"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0i47d")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperator/TextureButtonOperator3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonSymbolOperator3" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator3/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("8_r4lks")
+
+[node name="ButtonHaloOperator3" type="Sprite2D" parent="VBoxContainerButtonsOperator/TextureButtonOperator3/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="VBoxContainerButtonsOperand" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 212)
+layout_mode = 0
+offset_left = 500.0
+offset_top = 120.0
+offset_right = 600.0
+offset_bottom = 332.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureButtonOperand0" type="TextureButton" parent="VBoxContainerButtonsOperand"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_mgwkc")
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperand/TextureButtonOperand0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+
+[node name="ButtonSymbolOperand0" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand0/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("4_hxu8e")
+
+[node name="ButtonHaloOperand0" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand0/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="TextureButtonOperand1" type="TextureButton" parent="VBoxContainerButtonsOperand"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_4w2x3")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperand/TextureButtonOperand1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonSymbolOperand1" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand1/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("6_ou6is")
+
+[node name="ButtonHaloOperand1" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand1/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="TextureButtonOperand2" type="TextureButton" parent="VBoxContainerButtonsOperand"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_svq4k")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperand/TextureButtonOperand2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonSymbolOperand2" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand2/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("7_necax")
+
+[node name="ButtonHaloOperand2" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand2/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="TextureButtonOperand3" type="TextureButton" parent="VBoxContainerButtonsOperand"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ygedu")
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_raeie")
+stretch_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainerButtonsOperand/TextureButtonOperand3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonSymbolOperand3" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand3/CenterContainer"]
+unique_name_in_owner = true
+texture = ExtResource("8_r4lks")
+
+[node name="ButtonHaloOperand3" type="Sprite2D" parent="VBoxContainerButtonsOperand/TextureButtonOperand3/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("5_nvumn")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureProgressTopLeft" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 40.0
+fill_mode = 4
+radial_initial_angle = 270.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2(20, 20)
+texture_under = ExtResource("9_pg34l")
+texture_progress = ExtResource("10_m4h2d")
+
+[node name="TextureProgressTop" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 40.0
+offset_right = 600.0
+offset_bottom = 40.0
+min_value = 40.0
+max_value = 600.0
+value = 40.0
+texture_under = ExtResource("11_p8abn")
+texture_progress = ExtResource("12_s17dp")
+
+[node name="TextureProgressTopRight" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 640.0
+offset_right = 680.0
+offset_bottom = 40.0
+rotation = 1.5708
+min_value = 600.0
+max_value = 640.0
+value = 600.0
+fill_mode = 4
+radial_initial_angle = 270.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2(20, 20)
+texture_under = ExtResource("9_pg34l")
+texture_progress = ExtResource("10_m4h2d")
+
+[node name="TextureProgressRight" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 620.0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 320.0
+min_value = 640.0
+max_value = 920.0
+value = 640.0
+fill_mode = 2
+texture_under = ExtResource("13_37hlw")
+texture_progress = ExtResource("14_6llfj")
+
+[node name="TextureProgressBottomRight" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 640.0
+offset_top = 360.0
+offset_right = 680.0
+offset_bottom = 400.0
+rotation = 3.14159
+min_value = 920.0
+max_value = 960.0
+value = 920.0
+fill_mode = 4
+radial_initial_angle = 270.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2(20, 20)
+texture_under = ExtResource("9_pg34l")
+texture_progress = ExtResource("10_m4h2d")
+
+[node name="TextureProgressBottom" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 40.0
+offset_top = 340.0
+offset_right = 600.0
+offset_bottom = 360.0
+min_value = 960.0
+max_value = 1520.0
+value = 960.0
+fill_mode = 1
+texture_under = ExtResource("11_p8abn")
+texture_progress = ExtResource("12_s17dp")
+
+[node name="TextureProgressBottomLeft" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 360.0
+offset_right = 40.0
+offset_bottom = 400.0
+rotation = 4.71239
+min_value = 1520.0
+max_value = 1560.0
+value = 1520.0
+fill_mode = 4
+radial_initial_angle = 270.0
+radial_fill_degrees = 90.0
+radial_center_offset = Vector2(20, 20)
+texture_under = ExtResource("9_pg34l")
+texture_progress = ExtResource("10_m4h2d")
+
+[node name="TextureProgressLeft" type="TextureProgressBar" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 320.0
+min_value = 1560.0
+max_value = 1840.0
+value = 1560.0
+fill_mode = 3
+texture_under = ExtResource("13_37hlw")
+texture_progress = ExtResource("14_6llfj")
+
+[node name="ButtonBlocker" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+offset_left = 400.0
+offset_top = 90.0
+offset_right = 640.0
+offset_bottom = 360.0
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="VBoxContainerMenu/TextureButtonEasy" to="." method="_on_texture_button_easy_pressed"]
+[connection signal="pressed" from="VBoxContainerMenu/TextureButtonHard" to="." method="_on_texture_button_hard_pressed"]
+[connection signal="timeout" from="TimerGame" to="." method="_on_timer_game_timeout"]
+[connection signal="timeout" from="TimerUpdate" to="." method="_on_timer_update_timeout"]
+[connection signal="pressed" from="VBoxContainerButtonsOperator/TextureButtonOperator0" to="." method="_on_texture_button_operator_0_pressed"]
+[connection signal="pressed" from="VBoxContainerButtonsOperator/TextureButtonOperator1" to="." method="_on_texture_button_operator_1_pressed"]
+[connection signal="pressed" from="VBoxContainerButtonsOperator/TextureButtonOperator2" to="." method="_on_texture_button_operator_2_pressed"]
+[connection signal="pressed" from="VBoxContainerButtonsOperator/TextureButtonOperator3" to="." method="_on_texture_button_operator_3_pressed"]
+[connection signal="pressed" from="VBoxContainerButtonsOperand/TextureButtonOperand0" to="." method="_on_texture_button_operand_0_pressed"]
+[connection signal="pressed" from="VBoxContainerButtonsOperand/TextureButtonOperand1" to="." method="_on_texture_button_operand_1_pressed"]
+[connection signal="pressed" from="VBoxContainerButtonsOperand/TextureButtonOperand2" to="." method="_on_texture_button_operand_2_pressed"]
+[connection signal="pressed" from="VBoxContainerButtonsOperand/TextureButtonOperand3" to="." method="_on_texture_button_operand_3_pressed"]
