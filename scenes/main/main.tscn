@@ -1,12 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://v8yeymtkyifq"]
+[gd_scene load_steps=31 format=3 uid="uid://v8yeymtkyifq"]
 
 [ext_resource type="Script" uid="uid://dpvokmmnaljay" path="res://scenes/main/main.gd" id="1_hyk8p"]
 [ext_resource type="Shader" uid="uid://cdlqk7w6igjhc" path="res://scenes/main/button.gdshader" id="2_7smn1"]
 [ext_resource type="Texture2D" uid="uid://dan2vb0p20ct8" path="res://assets/sprites/buttons/button_blank.png" id="3_raeie"]
 [ext_resource type="Texture2D" uid="uid://cdgy4hy708bjt" path="res://assets/sprites/buttons/symbol_beta.png" id="4_hxu8e"]
 [ext_resource type="Texture2D" uid="uid://cfhntboy7g6vo" path="res://assets/sprites/buttons/halo.png" id="5_nvumn"]
+[ext_resource type="AudioStream" uid="uid://05mg864em72f" path="res://assets/audio/c.wav" id="5_pg34l"]
+[ext_resource type="AudioStream" uid="uid://mccffkchu56n" path="res://assets/audio/e.wav" id="6_m4h2d"]
 [ext_resource type="Texture2D" uid="uid://hjo8ce4iln8h" path="res://assets/sprites/buttons/symbol_gamma.png" id="6_ou6is"]
 [ext_resource type="Texture2D" uid="uid://c7pyhrtrgtayy" path="res://assets/sprites/buttons/symbol_omega.png" id="7_necax"]
+[ext_resource type="AudioStream" uid="uid://dxptg4yktwweq" path="res://assets/audio/g.wav" id="7_p8abn"]
 [ext_resource type="Texture2D" uid="uid://daav2m047gue" path="res://assets/sprites/buttons/symbol_theta.png" id="8_r4lks"]
 [ext_resource type="Texture2D" uid="uid://coeh53517e5qc" path="res://assets/sprites/progress_bar/progress_bar_arc_under.png" id="9_pg34l"]
 [ext_resource type="Texture2D" uid="uid://dxhsxa1vpv38c" path="res://assets/sprites/progress_bar/progress_bar_arc_progress.png" id="10_m4h2d"]
@@ -104,6 +107,18 @@ offset_right = 320.0
 offset_bottom = 275.0
 texture = ExtResource("18_ou6is")
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayerC" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_pg34l")
+
+[node name="AudioStreamPlayerE" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_m4h2d")
+
+[node name="AudioStreamPlayerG" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_p8abn")
 
 [node name="TimerGame" type="Timer" parent="."]
 unique_name_in_owner = true

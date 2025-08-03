@@ -135,6 +135,9 @@ var available_symbols_operand : Array[ButtonIdentifier] = [ButtonIdentifier.SYMB
 var vbox_container_menu : VBoxContainer = null
 var texture_rect_game_over : TextureRect = null
 
+var audio_stream_player_c : AudioStreamPlayer = null
+var audio_stream_player_e : AudioStreamPlayer = null
+var audio_stream_player_g : AudioStreamPlayer = null
 var timer_game : Timer = null
 var timer_update : Timer = null
 var label_difficulty : Label = null
@@ -192,6 +195,9 @@ func _ready() -> void:
 	vbox_container_menu = %VBoxContainerMenu
 	texture_rect_game_over = %TextureRectGameOver
 	
+	audio_stream_player_c = %AudioStreamPlayerC
+	audio_stream_player_e = %AudioStreamPlayerE
+	audio_stream_player_g = %AudioStreamPlayerG
 	timer_game = %TimerGame
 	timer_update = %TimerUpdate
 	label_difficulty = %LabelDifficulty
@@ -256,6 +262,24 @@ func _physics_process(delta: float) -> void:
 		return
 	color_rect_change_progress += delta
 	if(color_rect_change_progress >= color_rect_change_threshold):
+		var index_audio_to_play : int = index_color_rect_active % 3
+		match index_audio_to_play:
+			0:
+				audio_stream_player_c.play()
+				audio_stream_player_e.stop()
+				audio_stream_player_g.stop()
+			1:
+				audio_stream_player_c.stop()
+				audio_stream_player_e.play()
+				audio_stream_player_g.stop()
+			2:
+				audio_stream_player_c.stop()
+				audio_stream_player_e.stop()
+				audio_stream_player_g.play()
+			_:
+				audio_stream_player_c.stop()
+				audio_stream_player_e.stop()
+				audio_stream_player_g.stop()
 		color_rect_change_progress = 0.0
 		index_color_rect_active += 1
 		if(index_color_rect_active >= color_rect_count):
@@ -776,6 +800,9 @@ func _on_texture_button_hard_pressed() -> void:
 	return
 
 func _on_game_over_timeout() -> void:
+	audio_stream_player_c.stop()
+	audio_stream_player_e.stop()
+	audio_stream_player_g.stop()
 	button_blocker.show()
 	texture_rect_game_over.hide()
 	vbox_container_menu.show()
